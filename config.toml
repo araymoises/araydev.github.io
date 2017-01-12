@@ -2,7 +2,7 @@
 baseurl = "192.168.0.101"
 languageCode = "en-us"
 title = "Moisés Aray"
-theme = "hugo-agency-theme"
+#theme = "hugo-agency-theme"
 
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
