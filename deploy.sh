@@ -1,20 +1,11 @@
-#!/bin/bash
+# initialize new git repository
+git init
 
-echo -e "\033[0;32mDeploying updates to Github...\033[0m"
+# add /public directory to our .gitignore file
+echo "/public" >> .gitignore
 
-# Build the project.
-hugo
+# commit and push code to master branch
+git commit -a -m "Initial commit"
+git remote add origin git@bitbucket.org:araymoises/araydev.git
+git push -u origin master
 
-# Add changes to git.
-git add -A
-
-# Commit changes.
-msg="Actualización `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
-fi
-git commit -a -m "$msg"
-
-# Push source and build repos.
-git push origin master
-git subtree push --prefix=public git@github.com:araymoises/araydev.github.io
